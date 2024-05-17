@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #result {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            pointer-events: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Length :<input type="number" id="length"><br>
+        Width :<input type="number" id="width"><br>
+        Result :<input type="text" id="result" readonly><br>
+        <button onclick="area()">Calculate Area</button>
+        <button onclick="perimeter()">Calculate Perimeter</button>
+    </div>
+
+    <script>
+        function area() {
+            var length = Number(document.getElementById("length").value);
+            var width = Number(document.getElementById("width").value);
+            var result = length * width;
+            document.getElementById("result").value = result;
+        }
+
+        function perimeter() {
+            var length = Number(document.getElementById("length").value);
+            var width = Number(document.getElementById("width").value);
+            var result = 2 * (length + width);
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>

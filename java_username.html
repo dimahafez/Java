@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="username">Enter User Name:</label><br>
+        <input type="text" id="username"><br>
+        <label for="password">Enter Password:</label><br>
+        <input type="password" id="password"><br>
+        <button onclick="check()">Login</button>
+    </div>
+
+    <script>
+        function check() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            if (user.match("Mohamad") && pass.match("asdf")) {
+                alert("Hello");
+                location = "main.html";
+            } else {
+                alert("Invalid User Name or Password");
+            }
+        }
+    </script>
+</body>
+</html>

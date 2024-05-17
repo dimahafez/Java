@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="number"], input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Simple Calculator</h2>
+        <label for="first">Enter the First number:</label><br>
+        <input type="number" id="first"><br>
+        <label for="second">Enter the Second number:</label><br>
+        <input type="number" id="second"><br>
+        <label for="result">Result:</label><br>
+        <input type="text" id="result" readonly><br><br>
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">/</button>
+    </div>
+
+    <script>
+        function add() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var c = a + b;
+            document.getElementById("result").value = c;
+        }
+
+        function sub() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var c = a - b;
+            document.getElementById("result").value = c;
+        }
+
+        function mul() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var c = a * b;
+            document.getElementById("result").value = c;
+        }
+
+        function div() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            if (b !== 0) {
+                var c = a / b;
+                document.getElementById("result").value = c;
+            } else {
+                alert("Division by zero is not allowed!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"], input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Money in Dollar: <input type="number" id="dolar"> $<br>
+        Exchange Rate (Sek per Dollar): <input type="number" id="rate"> Kr<br>
+        Money in Sek: <input type="text" id="Sek" readonly> Kr<br>
+        <button onclick="change()">Convert Currency</button>
+    </div>
+
+    <script>
+        function change() {
+            var moneyDolar = Number(document.getElementById("dolar").value);
+            var rate = Number(document.getElementById("rate").value);
+            var moneySek = moneyDolar * rate;
+            document.getElementById("Sek").value = moneySek;
+        }
+    </script>
+</body>
+</html>
